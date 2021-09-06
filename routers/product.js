@@ -27,10 +27,16 @@ const isAdmin = catchError(async (req, res, next) => {
 })
 
 // CLoudnary
+// cloudinary.config({
+//     cloud_name: 'degyw2spa',
+//     api_key: '959516473345681',
+//     api_secret: 'mXFHfCDdYEMQQk9-za4K6-I9rM4'
+// });
+
 cloudinary.config({
-    cloud_name: 'degyw2spa',
-    api_key: '959516473345681',
-    api_secret: 'mXFHfCDdYEMQQk9-za4K6-I9rM4'
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.CLOUD_API_KEY,
+    api_secret: process.env.CLOUD_API_SECRET
 });
 
 
