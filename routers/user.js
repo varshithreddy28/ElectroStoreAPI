@@ -15,7 +15,7 @@ const router = express.Router()
 const catchError = require('../utilities/catchError')
 const { user } = require('../middleware/validate')
 const isLoggedin = require('../middleware/isLoggedin')
-const stripe = require('stripe')("sk_test_51JH9aUSBUMGmaHBQawspfVvKGECdUF2igPri5nL1CE6a58PXbyR7GGxL1JOkQMNiCq84ArIt29omVGrTOjTXE8Xk00rPkmpnj5");
+const stripe = require('stripe')(process.env.STRIPE_PAYMENT);
 const { v4: uuidv4 } = require('uuid');
 
 const isAdmin = catchError(async (req, res, next) => {
