@@ -81,6 +81,8 @@ app.use((err, req, res, next) => {
     res.json({ success: false, message: `${msg}` })
 })
 
-app.listen(3000, (req, res) => {
-    console.log("Connected to port 3000")
+const port = process.env.PORT || 3000
+
+app.listen(port, (req, res) => {
+    console.log(`Connected to port ${port}`)
 })
